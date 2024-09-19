@@ -1,8 +1,10 @@
 repos:
   - repo: https://github.com/tateexon/pre-commit-hooks
-    rev: db078105fc8d83f45efb47043c0d586b856b6108 # v0.0.1
+    rev: f3a26e1675b64927002fd342228e64de8d43e0fa # v0.0.2
     hooks:
       - id: detect-typos
+      - id: rust-lint
+      - id: rust-fmt
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: 2c9f875913ee60ca25ce70243dc24d5b6415598c # v4.6.0
     hooks:
