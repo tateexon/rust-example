@@ -8,12 +8,18 @@ pub fn get_2d_coordinates(index: usize, width: usize) -> (usize, usize) {
     (x, y)
 }
 
-pub fn get_2d_value<T: Copy>(vec: &Vec<T>, x: usize, y: usize, width: usize) -> Option<T> {
+pub fn get_2d_value<T: Copy>(vec: &[T], x: usize, y: usize, width: usize) -> Option<T> {
     let index = get_2d_index(x, y, width);
     vec.get(index).copied()
 }
 
-fn insert_2d_value<T: Copy>(vec: &mut Vec<T>, x: usize, y: usize, width: usize, value: T) -> Result<(), &'static str> {
+pub fn insert_2d_value<T: Copy>(
+    vec: &mut [T],
+    x: usize,
+    y: usize,
+    width: usize,
+    value: T,
+) -> Result<(), &'static str> {
     let index = get_2d_index(x, y, width);
     if index < vec.len() {
         vec[index] = value;
